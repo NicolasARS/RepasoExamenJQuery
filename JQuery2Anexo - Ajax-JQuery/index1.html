@@ -15,7 +15,7 @@
             success: function(data) {
                 $('#contenedor').html(data);
             },
-            error: function() {
+            error: function(xhr, status, error) {
                 alert('Error en la transferencia de la información');
             }
         });

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 4</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <h1>Enviar Datos con jQuery $.post</h1>
+
+    <form id="formulario">
+        <label for="parametro1">Parámetro 1:</label>
+        <input type="text" id="parametro1" name="parametro1"><br><br>
+    
+        <label for="parametro2">Parámetro 2:</label>
+        <input type="text" id="parametro2" name="parametro2"><br><br>
+    
+        <input type="button" id="enviar" value="Enviar">
+    </form>
+    
+    <div id="resultado"></div>
+    
+    <script>
+    $(document).ready(function(){
+        $('#enviar').click(function(){
+            var param1 = $('#parametro1').val();
+            var param2 = $('#parametro2').val();
+    
+            $.post('procesar.php', { param1: param1, param2: param2 }, function(data){
+                $('#resultado').html(data);
+            });
+        });
+    });
+    </script>
+
+</body>
+</html>

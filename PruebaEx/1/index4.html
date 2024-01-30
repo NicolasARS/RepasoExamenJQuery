@@ -23,12 +23,12 @@
 <script>
 $(document).ready(function () {
 
-    $('mostrar-resultado').change(function(){
+    $('#mostrar-resultado').change(function(){
 
         if($(this).prop('checked')){
 
-            var numero1 = $('#numero1').val() || 0;
-            var numero2 = $('#numero2').val() || 0;
+            var numero1 = parseInt($('#numero1').val()) || 0;
+            var numero2 = parseInt($('#numero2').val()) || 0;
 
             var resultado = numero1 + numero2;
 

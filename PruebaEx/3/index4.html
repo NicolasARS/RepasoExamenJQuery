@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 4</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<h1>Enviar datos a documento PHP con $.get y serialize</h1>
+
+<form id="formulario">
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" name="usuario"><br><br>
+
+    <label for="clave">Contraseña:</label>
+    <input type="password" id="clave" name="clave"><br><br>
+
+    <input type="submit" id="enviar" value="Enviar">
+</form>
+
+<div id="resultado"></div>
+
+<script>
+$(document).ready(function(){
+    $('#formulario').on('submit', function(e){
+        e.preventDefault();
+        $.get('php/procesar.php', $(this).serialize(), function(data){
+            $('#resultado').html(data);
+        });
+    });
+});
+</script>
+
+</body>
+</html>

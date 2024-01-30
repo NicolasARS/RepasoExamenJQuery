@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 3</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<h1>Mostrar fichero XML con ajax</h1>
+
+<button id="mostrar">Mostrar fichero XML</button>
+<div id="resultado"></div>
+
+<script>
+$(document).ready(function () {
+
+    $('#mostrar').click(function(){
+        $.get('datos.xml', function(data){
+            $('#resultado').html(new XMLSerializer().serializeToString(data));
+        });
+    });
+});
+</script>
+
+</body>
+</html>

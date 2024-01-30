@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 2</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<h1>Traer archivo PHP con Ajax</h1>
+
+<button id="mostrar">Ejecutar PHP</button>
+<div id="resultado"><img src="media/Fidget-spinner.gif" /></div>
+
+<script>
+$(document).ready(function () {
+
+    $('#mostrar').click(function(){
+        $.ajax({
+            url: 'php/ejercicio2.php',
+            method: 'GET',
+            success: function(data){
+                $('#resultado').html(data);
+            },
+            error: function (xhr, status, error){
+                $('#resultado').html("Error " + xhr.status + ": " + xhr.statusText)
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>

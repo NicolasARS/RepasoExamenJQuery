@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 2</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<h1>Cargar uan pagina ajax</h1>
+
+<button id="load">Mostrar fichero</button>
+<div id="resultado"></div>
+
+<script>
+$(document).ready(function () {
+
+    $('#load').click(function(){
+        $('#resultado').load('index1.html');
+    });
+});
+</script>
+
+</body>
+</html>

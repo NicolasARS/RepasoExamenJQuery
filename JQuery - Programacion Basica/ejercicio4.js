@@ -10,11 +10,9 @@ $(document).ready(function() {
         // Calcular la suma
         var resultado = numero1 + numero2;
 
-        // Crear un nuevo campo de texto para mostrar el resultado
-        $('#formulario').append('<input type="text" id="resultado" value="' + resultado + '" readonly>');
-      } else {
-        // Si el checkbox está desmarcado, eliminar el campo de resultado
-        $('#resultado').remove();
+        $('#resultado').val(resultado).show();
+      }else{
+          $('#resultado').hide();
       }
     });
   });

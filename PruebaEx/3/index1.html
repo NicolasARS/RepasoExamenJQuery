@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 1</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<h1>Mostrar fichero de texto con ajax 2 </h1>
+
+<button id="mostrar">Mostrar fichero</button>
+<div id="resultado"></div>
+
+<script>
+$(document).ready(function () {
+
+    $('#mostrar').click(function(){
+        $.ajax({
+            url: 'datos/datos.txt',
+            method: 'GET',
+            success: function(data){
+                $('#resultado').html(data);
+            },
+            error: function (xhr, status, error){
+                alert('Error en la transferencia de la información');
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
