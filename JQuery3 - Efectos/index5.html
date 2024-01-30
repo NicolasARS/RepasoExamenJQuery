@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 5</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style5.css">
+</head>
+<body>
+    <h1>Cola de efectos</h1>
+    <button id="start">Iniciar Efectos</button>
+    <div id="cubo"></div>
+    <script>
+        $("#start").click(function() {
+            $("#cubo").queue(function(next) {
+                $(this).animate({ left: "500px" });
+                next();
+            }).delay(1000)
+              .queue(function(next) {
+                $(this).css("background-color", "blue");
+                next();
+            }).delay(1000)
+              .queue(function(next) {
+                $(this).animate({ left: "0px" });
+                next();
+            });
+        });
+    </script>
+</body>
+</html>

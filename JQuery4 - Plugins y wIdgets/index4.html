@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 4</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <style>
+        .slick-slide {
+            margin: 0px 20px;
+        }
+        .slick-list {
+            margin: 0 -20px;
+        }
+        .slider {
+            width: 80%;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+<h1>Plugin carrusel</h1>
+<div class="slider">
+    <div><img src="img/1_tsqlgfBBb32ZLx1Y6bwzKA.jpg" width="100%" alt="Imagen 1"></div>
+    <div><img src="img/courseImage_JQUERY_1488368088_.png" width="100%" alt="Imagen 2"></div>
+    <div><img src="img/jquery-ajax.jpg" width="100%" alt="Imagen 3"></div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        });
+    });
+</script>
+
+</body>
+</html>

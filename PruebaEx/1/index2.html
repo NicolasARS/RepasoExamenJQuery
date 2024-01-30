@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Botones show and hide</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<h1>Botones Show and Hide</h1>
+<div id="image">
+<img src="img/design.png" height="300px"/>
+</div>
+
+<button id="show-image">Show image</button>
+<button id="hide-image">HIde image</button>
+
+<script>
+$(document).ready(function () {
+
+    $('#image').hide();
+
+    $('#show-image').on('click', function(){
+        $('#image').show(2500)
+    });
+
+    $('#hide-image').on('click', function() {
+        $('#image').hide('slow')
+    });
+
+})
+</script>
+
+</body>
+</html>

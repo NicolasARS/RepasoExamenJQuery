@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 3</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<h1>Parrafo cambiante de color con radio</h1>
+
+<p>Este parrafo cambiara de color segun el valor del radio seleccionado</p>
+
+<label>
+    <input type="radio" name="color" value="red"> Rojo
+  </label>
+
+  <label>
+    <input type="radio" name="color" value="blue"> Azul
+  </label>
+
+  <label>
+    <input type="radio" name="color" value="green"> Verde
+  </label>
+
+<script>
+$(document).ready(function () {
+
+    $('input[type=radio]').change(function() {
+
+        var colorSeleccionado = $(this).val();
+
+        $('p').css('background-color', colorSeleccionado);
+
+    })
+
+})
+</script>
+
+</body>
+</html>

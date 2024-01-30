@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 6</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+<h1>Widget calendario con validacion</h1>
+<form id="miFormulario">
+    <label for="fecha">Fecha:</label>
+    <input type="text" id="fecha" name="fecha">
+    
+    <input type="submit" value="Enviar">
+</form>
+
+
+
+<script>
+// Widget de Calendario
+$(document).ready(function(){
+    $("#fecha").datepicker();
+});
+
+// Plugin de Validación de Formulario
+(function($) {
+    $.fn.validarFormulario = function() {
+        this.submit(function(e) {
+            var fecha = $('#fecha').val();
+            if(fecha === '') {
+                alert('Por favor, seleccione una fecha.');
+                e.preventDefault();
+            }
+        });
+        return this;
+    };
+})(jQuery);
+
+$(document).ready(function() {
+    $('#miFormulario').validarFormulario();
+});
+</script>
+
+</body>
+</html>

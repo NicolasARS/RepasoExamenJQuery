@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Enviar Datos con POST</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <button id="postData">Enviar datos</button>
+    <div id="postResult"></div>
+
+    <script>
+        $(document).ready(function() {
+            $("#postData").click(function() {
+                $.post("procesar.php", {param1: "datos 1", param2: "datos 2"}, function(data) {
+                    $("#postResult").html(data);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 3</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Plugin tooltip</h1>
+    <button id="miBoton">Pasa el cursor sobre mí</button>
+
+    <script>
+        (function($) {
+            $.fn.tooltipPersonalizado = function(opciones) {
+                var configuracion = $.extend({
+                    texto: 'Información del tooltip',
+                    fondo: '#f8f9fa',
+                    colorTexto: '#333'
+                }, opciones);
+        
+                this.hover(function() {
+                    // Crear el tooltip
+                    $('body').append('<div id="tooltipPersonalizado" style="position:absolute; background-color:' 
+                    + configuracion.fondo + '; color:' + configuracion.colorTexto 
+                    + '; border: 1px solid black; padding: 5px; border-radius: 5px; z-index: 1000;">' 
+                    + configuracion.texto + '</div>');
+        
+                    // Posicionar el tooltip
+                    $('#tooltipPersonalizado').css({
+                        top: event.pageY + 10 + 'px',
+                        left: event.pageX + 10 + 'px'
+                    });
+                }, function() {
+                    // Eliminar el tooltip
+                    $('#tooltipPersonalizado').remove();
+                });
+        
+                return this;
+            };
+        })(jQuery);
+        
+        $(document).ready(function() {
+            $('#miBoton').tooltipPersonalizado({
+                texto: 'Este es un botón.',
+                fondo: '#007bff',
+                colorTexto: '#ffffff'
+            });
+        });
+        </script>
+
+</body>
+</html>

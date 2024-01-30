@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 2</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Plugin validar formulario</h1>
+    <form id="miFormulario">
+        <input type="text" name="nombre" placeholder="Nombre">
+        <input type="email" name="email" placeholder="Email">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        (function($) {
+            $.fn.validarFormulario = function() {
+                this.submit(function(e) {
+                    let valido = true;
+                    $(this).find('input').each(function() {
+                        if (!$(this).val()) {
+                            alert('Por favor, complete todos los campos.');
+                            valido = false;
+                            return false;
+                        }
+                    });
+                    return valido;
+                });
+            };
+        })(jQuery);
+        
+        $(document).ready(function() {
+            $('#miFormulario').validarFormulario();
+        });
+        </script>
+    
+</body>
+</html>

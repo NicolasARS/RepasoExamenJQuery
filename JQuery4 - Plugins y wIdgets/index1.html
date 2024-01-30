@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Plugin desaparecer parrafos</h1>
+    <p>Primer párrafo.</p>
+    <p>Segundo párrafo.</p>
+    <p>Tercer párrafo.</p>
+    <p>Cuarto párrafo.</p>
+    <!-- Más párrafos si los necesitas -->
+    <button id="desaparecer">Desaparecer Párrafos</button>
+    <script>
+        (function($) {
+            $.fn.desaparecerParrafos = function() {
+                this.click(function() {
+                    $('p').fadeOut();
+                });
+                return this;
+            };
+        })(jQuery);
+        
+        $(document).ready(function() {
+            $('#desaparecer').desaparecerParrafos();
+        });
+        </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Países de Europa</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Ejercicio 5</h1>
+    <h2>Países de Europa</h2>
+    <ul id="listaPaises"></ul>
+    <div id="error"></div>
+
+    <script>
+        $(document).ready(function() {
+            $.getJSON('https://restcountries.com/v2/regionalbloc/eu', function(data) {
+                $.each(data, function(i, pais) {
+                    $('#listaPaises').append('<li>' + pais.name + '</li>');
+                });
+            }).fail(function(jqXHR) {
+                $('#error').html('Error: ' + jqXHR.status + ' (' + jqXHR.statusText + ')');
+            });
+        });
+    </script>
+</body>
+</html>

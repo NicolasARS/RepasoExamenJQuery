@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 1</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style1.css">
+</head>
+<body>
+    <h1>Efectos en una imagen</h1>
+    <button id="hide">Ocultar</button>
+    <button id="show">Mostrar</button>
+    <button id="toggle">Toggle</button>
+    <button id="fadein">Fade In</button>
+    <button id="fadeout">Fade Out</button>
+    <button id="fadetoggle">Fade Toggle</button>
+    <button id="slideup">Slide Up</button>
+    <button id="slidedown">Slide Down</button>
+    <button id="slidetoggle">Slide Toggle</button>
+    <button id="animate">Animate</button>
+    <img src="media/design.png" alt="Imagen" id="imagen" >
+    
+    <script>
+        $("#hide").click(function() {
+            $("#imagen").hide();
+        });
+        $("#show").click(function() {
+            $("#imagen").show();
+        });
+        $("#toggle").click(function() {
+            $("#imagen").toggle();
+        });
+        $("#fadein").click(function() {
+            $("#imagen").fadeIn();
+        });
+        $("#fadeout").click(function() {
+            $("#imagen").fadeOut();
+        });
+        $("#fadetoggle").click(function() {
+            $("#imagen").fadeToggle();
+        });
+        $("#slideup").click(function() {
+            $("#imagen").slideUp();
+        });
+        $("#slidedown").click(function() {
+            $("#imagen").slideDown();
+        });
+        $("#slidetoggle").click(function() {
+            $("#imagen").slideToggle();
+        });
+        $("#animate").click(function() {
+            $("#imagen").animate({
+                opacity: 0.5,
+                width: "300px"
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Ejercicio 3</h1>
+    
+    <script>
+        $.ajax({
+            url: 'js/alert.js',
+            dataType: "script",
+            success: function() {
+                console.log("Script cargado y ejecutado correctamente.");
+            },
+            error: function() {
+                alert('Error al cargar el script');
+            }
+        });
+    </script>
+</body>
+</html>

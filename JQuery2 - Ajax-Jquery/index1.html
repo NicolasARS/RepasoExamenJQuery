@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mostrar Fichero de Texto</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <button id="mostrarBtn">Mostrar fichero de texto</button>
+    <div id="resultado"></div>
+
+    <script>
+        $(document).ready(function () {
+    $('#mostrarBtn').click(function () {
+        $.ajax({
+            url: 'prueba.txt',
+            method: 'GET',
+            success: function (data) {
+                $('#resultado').text(data);
+            },
+            error: function (xhr, status, error) {
+                console.error('Error al obtener el archivo de texto');
+            }
+        });
+    });
+});
+    </script>
+</body>
+</html>

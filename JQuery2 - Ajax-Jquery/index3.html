@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mostrar Fichero XML</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <button id="showXmlFile">Mostrar fichero XML</button>
+    <div id="xmlContent"></div>
+
+    <script>
+        $(document).ready(function() {
+            $("#showXmlFile").click(function() {
+                $.get("datos.xml", function(data) {
+                    $("#xmlContent").html(new XMLSerializer().serializeToString(data));
+                });
+            });
+        });
+    </script>
+</body>
+</html>

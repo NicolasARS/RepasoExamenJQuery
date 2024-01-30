@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 3</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style3.css">
+</head>
+<body>
+
+    <h1>Mover cubo</h1>
+    <button id="iniciar">Iniciar Efecto</button>
+    <button id="parar">Parar Efecto</button>
+    <div id="cubo"></div>
+
+    <script>
+        function moverCubo() {
+            $("#cubo").animate({ top: "500px" })
+                      .animate({ left: "500px" })
+                      .animate({ top: "100px" })
+                      .animate({ left: "10px" });
+        }
+
+        $("#iniciar").click(function() {
+            moverCubo();
+        });
+
+        $("#parar").click(function() {
+            $("#cubo").stop(true);
+        });
+    </script>
+</body>
+</html>

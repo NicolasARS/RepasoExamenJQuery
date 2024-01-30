@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Ingreso</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Ejercicio 4</h1>
+    <form id="formularioLogin">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario"><br>
+        <label for="clave">Clave:</label>
+        <input type="password" id="clave" name="clave"><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#formularioLogin').on('submit', function(e) {
+                e.preventDefault();
+                $.get('php/procesar.php', $(this).serialize(), function(data) {
+                    $('#resultado').html(data);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

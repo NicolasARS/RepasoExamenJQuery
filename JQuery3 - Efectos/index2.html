@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 2</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style2.css">
+</head>
+<body>
+    <div id="mensaje">Bienvenidos a esta aplicación</div>
+    <button id="saludo">Saludo</button>
+    <button id="despedida">Despedida</button>
+
+    <script>
+        $("#saludo").click(function() {
+            $("#mensaje").animate({ opacity: 1 });
+        });
+        $("#despedida").click(function() {
+            $("#mensaje").animate({ opacity: 0 });
+        });
+    </script>
+</body>
+</html>

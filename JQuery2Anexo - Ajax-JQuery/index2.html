@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h2>Ejercicio 2</h2>
+    <div id="contenedor"><img src="media/Fidget-spinner.gif" /></div>
+
+    <script>
+        $.ajax({
+            url: 'php/ejercicio2.php',
+            success: function(data) {
+                $('#contenedor').html(data);
+            },
+            error: function(xhr) {
+                $('#contenedor').html('Error ' + xhr.status + ': ' + xhr.statusText);
+            }
+        });
+    </script>
+</body>
+</html>
